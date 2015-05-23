@@ -4,9 +4,7 @@ app.controller('LoginCtrl', function ($scope, authService, $location) {
   //Step 4 of Registration
   var loginCallback = function(user){
     user.uid = user.uid.replace('simplelogin:', '');
-    $scope.$apply(function(){
-      $location.path('/dashboard/' + user.uid)
-    });
+    $location.path('/dashboard/' + user.uid)
   };
 
   $scope.login = function () {
